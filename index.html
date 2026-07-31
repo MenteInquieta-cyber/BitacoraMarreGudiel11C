@@ -3,141 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitacora Maria Renee</title>
-
+    <title>Bitácora Maria Renée - Contenido de mi Página Web</title>
     <link rel="icon" type="image/png" href="recursos/img/LogoFin1.png">
 
     <style>
-        /* Configuración General */
+        /* --- CONFIGURACIÓN GENERAL --- */
+        * {
+            box-sizing: border-box;
+        }
+
         html, body {
             height: 100%;
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #121212;
-            color: white;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0f19; /* Fondo oscuro con estrellas/espacio */
+            color: #333;
         }
 
         body {
             display: flex;
             flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- ENCABEZADO SUPERIOR --- */
+        header {
+            width: 100%;
+            background: linear-gradient(90deg, #6c5ce7, #8e44ad);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        main {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* --- SECCIÓN DE ESTADÍSTICAS / RESUMEN --- */
+        .panel-estadisticas {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             text-align: center;
         }
 
-        /* --- ENCABEZADO --- */
-        header {
-            padding: 20px;
-            background-color: rgba(226, 41, 149, 0.91);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+        .item-estadistica {
+            border-right: 1px solid #eee;
+            padding: 5px;
         }
 
-        /* --- EFECTO NEÓN PARA EL TÍTULO --- */
-        .titulo-neon {
-            font-size: 3.5rem;
-            color: #fff;
-            margin: 40px 0;
-
-            text-shadow:
-                0 0 7px #fff,
-                0 0 10px #fff,
-                0 0 21px #fff,
-                0 0 42px #bf00ff,
-                0 0 82px #bf00ff;
+        .item-estadistica:last-child {
+            border-right: none;
         }
 
-        /* --- CONTENIDO PRINCIPAL --- */
-        main {
+        .item-estadistica .numero {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #5c6bc0;
+        }
+
+        .item-estadistica .etiqueta {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* --- BARRA DE BÚSQUEDA Y FILTROS --- */
+        .panel-busqueda {
+            display: flex;
+            gap: 10px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .caja-busqueda {
             flex: 1;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 90%;
+            min-width: 200px;
+            position: relative;
         }
 
-        /* --- TARJETAS --- */
+        .caja-busqueda input {
+            width: 100%;
+            padding: 8px 12px 8px 35px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            background-color: #f8f9fa;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .caja-busqueda::before {
+            content: "🔍";
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .filtros {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn-filtro {
+            padding: 6px 14px;
+            border: 1px solid #7c4dff;
+            background-color: transparent;
+            color: #7c4dff;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-filtro.activo, .btn-filtro:hover {
+            background-color: #7c4dff;
+            color: white;
+        }
+
+        /* --- TARJETAS DE SEMANAS --- */
         .semana {
-            background-color: #1e1e1e;
-            border-radius: 15px;
+            background-color: #ffffff;
+            border-radius: 12px;
             padding: 25px;
-            margin-bottom: 30px;
-            text-align: left;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .semana:hover {
-            transform: translateY(-8px);
-            border-color: #bf00ff;
-            box-shadow: 0 15px 30px rgba(191, 0, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
         }
 
         .semana h2 {
-            color: #bf00ff;
+            color: #5c6bc0;
             margin-top: 0;
-            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .semana h2::before {
+            content: "💻";
+            font-size: 1.1rem;
         }
 
         .semana p {
-            color: #ccc;
-            line-height: 1.6;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
-        /* --- PDF --- */
+        /* --- VISOR DE PDF --- */
         .contenedor-pdf {
             width: 100%;
-            height: 600px;
-            border-radius: 10px;
-            border: 1px solid #444;
-            margin-top: 20px;
-            background-color: #fff;
+            height: 500px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f4;
         }
 
-        /* --- VIDEO CORREGIDO --- */
+        .nota-pdf {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .nota-pdf a {
+            color: #5c6bc0;
+            text-decoration: underline;
+        }
+
+        /* --- REPRODUCTOR DE VIDEO --- */
         .reproductor-video {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            border: 1px solid #444;
-            margin-top: 20px;
+            max-height: 450px;
+            border-radius: 8px;
             background-color: #000;
+            outline: none;
         }
 
-        /* --- EFECTO LOGO --- */
+        .pie-reproductor {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            width: 100%;
+            background-color: #1a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            margin-top: 30px;
+        }
+
         .logo-colegio {
             transition: transform 0.3s ease;
             cursor: pointer;
         }
 
         .logo-colegio:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
-        /* --- FOOTER --- */
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            border-top: 1px solid rgb(36, 140, 34);
-            background-color: #252525;
-            margin-top: 20px;
+        /* --- ADAPTABILIDAD MOBILE --- */
+        @media (max-width: 768px) {
+            .panel-estadisticas {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
-        /* --- RESPONSIVE --- */
-        @media(max-width:600px){
-
-            .titulo-neon {
-                font-size: 2.2rem;
+        @media (max-width: 600px) {
+            .panel-estadisticas {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .contenedor-pdf {
-                height: 400px;
+            .panel-busqueda {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filtros {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             footer {
                 flex-direction: column;
                 gap: 15px;
-                padding: 20px;
+                text-align: center;
+            }
+
+            .contenedor-pdf {
+                height: 350px;
             }
         }
     </style>
@@ -145,75 +277,160 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
     <header>
-        <h3>Bitácora de Aprendizaje</h3>
+        Contenido de mi Página Web
     </header>
 
     <main>
 
-        <h1 class="titulo-neon">Bitácora Maria Renee</h1>
-
-        <!-- SEMANA 1 -->
-        <div class="semana">
-
-            <h2>Semana 1: Fundamentos de Web</h2>
-
-            <p>
-                Esta semana exploramos cómo funciona el internet y la estructura básica de HTML5.
-                Es emocionante ver cómo unas cuantas etiquetas pueden crear una página entera.
-            </p>
-
-            <embed src="arduino 2.0.pdf"
-                   type="application/pdf"
-                   class="contenedor-pdf">
-
-            <div style="margin-top: 15px; text-align: right;">
-                <small style="color: #666;">Mayo 2026</small>
+        <!-- RESUMEN / ESTADÍSTICAS -->
+        <section class="panel-estadisticas">
+            <div class="item-estadistica">
+                <div class="numero">7</div>
+                <div class="etiqueta">Semanas</div>
             </div>
+            <div class="item-estadistica">
+                <div class="numero">2</div>
+                <div class="etiqueta">Sensores</div>
+            </div>
+            <div class="item-estadistica">
+                <div class="numero">5</div>
+                <div class="etiqueta">Circ. Físicos</div>
+            </div>
+            <div class="item-estadistica">
+                <div class="numero">4</div>
+                <div class="etiqueta">Circ. Simulador</div>
+            </div>
+            <div class="item-estadistica">
+                <div class="numero">⚙️</div>
+                <div class="etiqueta">Arduino UNO</div>
+            </div>
+        </section>
 
-        </div>
+        <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+        <section class="panel-busqueda">
+            <div class="caja-busqueda">
+                <input type="text" placeholder="Buscar semana o tema (ej. Sensores, RGB)...">
+            </div>
+            <div class="filtros">
+                <button class="btn-filtro activo">Todos</button>
+                <button class="btn-filtro">Sensores</button>
+                <button class="btn-filtro">Simulación</button>
+                <button class="btn-filtro">Físico</button>
+            </div>
+        </section>
 
-        <!-- SEMANA 2 -->
-        <div class="semana">
-
-            <h2>Semana 2: Estilos Avanzados</h2>
-
+        <!-- SEMANA 1 (PDF) -->
+        <article class="semana">
+            <h2>Semana 1: Introducción a Arduino</h2>
             <p>
-                Aprendimos a usar CSS para transformar el diseño aburrido en algo moderno.
-                Aplicamos efectos de sombras neón y transiciones suaves para mejorar la experiencia del usuario.
+                En esta sección aprendimos sobre los componentes de Arduino y cómo interactuar con elementos electrónicos básicos a través de material conceptual.
             </p>
 
-            <!-- VIDEO CORREGIDO -->
-            <video class="reproductor-video"
-                   controls
-                   autoplay
-                   muted
-                   preload="metadata">
+            <embed src="recursos/docs/introduccion_arduino.pdf" type="application/pdf" class="contenedor-pdf">
 
-                <source src="./simulacion.mp4" type="video/mp4">
+            <div class="nota-pdf">
+                ¿No puedes ver el PDF? <a href="recursos/docs/introduccion_arduino.pdf" target="_blank">Haz clic aquí para abrirlo en otra pestaña.</a>
+            </div>
+        </article>
 
+        <!-- SEMANA 2 (VIDEO) -->
+        <article class="semana">
+            <h2>Semana 2: Primer circuito y programación</h2>
+            <p>
+                En esta clase exploramos cómo dar vida a nuestro primer circuito con Arduino UNO usando estructuras avanzadas en Tinkercad (Diseño de semáforo básico en simulador).
+            </p>
+
+            <video class="reproductor-video" controls preload="metadata">
+                <source src="recursos/videos/semana2.mp4" type="video/mp4">
                 Tu navegador no soporta videos HTML5.
-
             </video>
 
-            <div style="margin-top: 15px; text-align: right;">
-                <small style="color: #666;">Mayo 2026</small>
-            </div>
+            <div class="pie-reproductor">Video explicativo del circuito simulado.</div>
+        </article>
 
-        </div>
+        <!-- SEMANA 3 (VIDEO) -->
+        <article class="semana">
+            <h2>Semana 3: Primer circuito y programación LED RGB</h2>
+            <p>
+                En esta clase exploramos cómo dar vida a nuestro primer circuito con un módulo RGB en Arduino UNO mediante estructuras avanzadas en Tinkercad.
+            </p>
+
+            <video class="reproductor-video" controls preload="metadata">
+                <source src="recursos/videos/semana3.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="pie-reproductor">Video explicativo del circuito simulado.</div>
+        </article>
+
+        <!-- SEMANA 4 (VIDEO) -->
+        <article class="semana">
+            <h2>Semana 4: Sensores de Proximidad y Ultrasonido</h2>
+            <p>
+                Implementación de sensores ultrasónicos HC-SR04 para la medición de distancias y activación de alertas sonoras/visuales.
+            </p>
+
+            <video class="reproductor-video" controls preload="metadata">
+                <source src="recursos/videos/semana4.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="pie-reproductor">Video explicativo del montaje y prueba.</div>
+        </article>
+
+        <!-- SEMANA 5 (VIDEO) -->
+        <article class="semana">
+            <h2>Semana 5: Control de Motores DC con Servomotores</h2>
+            <p>
+                Control de posición y movimiento preciso empleando servomotores con lecturas analógicas desde un potenciómetro.
+            </p>
+
+            <video class="reproductor-video" controls preload="metadata">
+                <source src="recursos/videos/semana5.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="pie-reproductor">Video explicativo del montaje y prueba.</div>
+        </article>
+
+        <!-- SEMANA 6 (VIDEO) -->
+        <article class="semana">
+            <h2>Semana 6: Ensamblaje e Integración en Físico</h2>
+            <p>
+                Traspaso de la simulación virtual a la placa física de Arduino UNO, manejo de conexiones en protoboard y alimentación de componentes.
+            </p>
+
+            <video class="reproductor-video" controls preload="metadata">
+                <source src="recursos/videos/semana6.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="pie-reproductor">Video del circuito físico en funcionamiento.</div>
+        </article>
+
+        <!-- SEMANA 7 (VIDEO) -->
+        <article class="semana">
+            <h2>Semana 7: Proyecto Final e Integración de Sistemas</h2>
+            <p>
+                Consolidación de sensores, salidas visuales y lógica de control integradas en el proyecto completo de la bitácora.
+            </p>
+
+            <video class="reproductor-video" controls preload="metadata">
+                <source src="recursos/videos/semana7.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="pie-reproductor">Video demostrativo del proyecto final.</div>
+        </article>
 
     </main>
 
     <!-- FOOTER -->
     <footer>
-
         <span>@MariadeLeon229</span>
-
-        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png"
-             alt="Logo Colegio"
-             class="logo-colegio"
-             height="80">
-
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" alt="Logo Colegio" class="logo-colegio" height="70">
     </footer>
 
 </body>
