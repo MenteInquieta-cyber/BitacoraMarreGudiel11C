@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitacora Maria Renee</title>
+
+    <link rel="icon" type="image/png" href="recursos/img/LogoFin1.png">
+
+    <style>
+        /* Configuración General */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* --- ENCABEZADO --- */
+        header {
+            padding: 20px;
+            background-color: rgba(226, 41, 149, 0.91);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- EFECTO NEÓN PARA EL TÍTULO --- */
+        .titulo-neon {
+            font-size: 3.5rem;
+            color: #fff;
+            margin: 40px 0;
+
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #bf00ff,
+                0 0 82px #bf00ff;
+        }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        /* --- TARJETAS --- */
+        .semana {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .semana:hover {
+            transform: translateY(-8px);
+            border-color: #bf00ff;
+            box-shadow: 0 15px 30px rgba(191, 0, 255, 0.2);
+        }
+
+        .semana h2 {
+            color: #bf00ff;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .semana p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* --- PDF --- */
+        .contenedor-pdf {
+            width: 100%;
+            height: 600px;
+            border-radius: 10px;
+            border: 1px solid #444;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        /* --- VIDEO CORREGIDO --- */
+        .reproductor-video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #444;
+            margin-top: 20px;
+            background-color: #000;
+        }
+
+        /* --- EFECTO LOGO --- */
+        .logo-colegio {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-colegio:hover {
+            transform: scale(1.2);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-top: 1px solid rgb(36, 140, 34);
+            background-color: #252525;
+            margin-top: 20px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media(max-width:600px){
+
+            .titulo-neon {
+                font-size: 2.2rem;
+            }
+
+            .contenedor-pdf {
+                height: 400px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h3>Bitácora de Aprendizaje</h3>
+    </header>
+
+    <main>
+
+        <h1 class="titulo-neon">Bitácora Maria Renee</h1>
+
+        <!-- SEMANA 1 -->
+        <div class="semana">
+
+            <h2>Semana 1: Fundamentos de Web</h2>
+
+            <p>
+                Esta semana exploramos cómo funciona el internet y la estructura básica de HTML5.
+                Es emocionante ver cómo unas cuantas etiquetas pueden crear una página entera.
+            </p>
+
+            <embed src="arduino 2.0.pdf"
+                   type="application/pdf"
+                   class="contenedor-pdf">
+
+            <div style="margin-top: 15px; text-align: right;">
+                <small style="color: #666;">Mayo 2026</small>
+            </div>
+
+        </div>
+
+        <!-- SEMANA 2 -->
+        <div class="semana">
+
+            <h2>Semana 2: Estilos Avanzados</h2>
+
+            <p>
+                Aprendimos a usar CSS para transformar el diseño aburrido en algo moderno.
+                Aplicamos efectos de sombras neón y transiciones suaves para mejorar la experiencia del usuario.
+            </p>
+
+            <!-- VIDEO CORREGIDO -->
+            <video class="reproductor-video"
+                   controls
+                   autoplay
+                   muted
+                   preload="metadata">
+
+                <source src="./simulacion.mp4" type="video/mp4">
+
+                Tu navegador no soporta videos HTML5.
+
+            </video>
+
+            <div style="margin-top: 15px; text-align: right;">
+                <small style="color: #666;">Mayo 2026</small>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <span>@MariadeLeon229</span>
+
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png"
+             alt="Logo Colegio"
+             class="logo-colegio"
+             height="80">
+
+    </footer>
+
+</body>
+</html>
