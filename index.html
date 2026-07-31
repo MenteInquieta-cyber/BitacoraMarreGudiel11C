@@ -17,7 +17,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0f19; /* Fondo oscuro con estrellas/espacio */
+            background-color: #0b0f19;
             color: #333;
         }
 
@@ -32,12 +32,12 @@
             width: 100%;
             background: linear-gradient(90deg, #6c5ce7, #8e44ad);
             color: white;
-            padding: 15px 20px;
+            padding: 20px;
             text-align: center;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             text-transform: uppercase;
         }
 
@@ -45,104 +45,8 @@
         main {
             width: 100%;
             max-width: 900px;
-            padding: 20px;
+            padding: 30px 20px;
             flex: 1;
-        }
-
-        /* --- SECCIÓN DE ESTADÍSTICAS / RESUMEN --- */
-        .panel-estadisticas {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            text-align: center;
-        }
-
-        .item-estadistica {
-            border-right: 1px solid #eee;
-            padding: 5px;
-        }
-
-        .item-estadistica:last-child {
-            border-right: none;
-        }
-
-        .item-estadistica .numero {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #5c6bc0;
-        }
-
-        .item-estadistica .etiqueta {
-            font-size: 0.75rem;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-
-        /* --- BARRA DE BÚSQUEDA Y FILTROS --- */
-        .panel-busqueda {
-            display: flex;
-            gap: 10px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .caja-busqueda {
-            flex: 1;
-            min-width: 200px;
-            position: relative;
-        }
-
-        .caja-busqueda input {
-            width: 100%;
-            padding: 8px 12px 8px 35px;
-            border: 1px solid #e0e0e0;
-            border-radius: 20px;
-            background-color: #f8f9fa;
-            outline: none;
-            font-size: 0.9rem;
-        }
-
-        .caja-busqueda::before {
-            content: "🔍";
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.8rem;
-            opacity: 0.5;
-        }
-
-        .filtros {
-            display: flex;
-            gap: 6px;
-        }
-
-        .btn-filtro {
-            padding: 6px 14px;
-            border: 1px solid #7c4dff;
-            background-color: transparent;
-            color: #7c4dff;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn-filtro.activo, .btn-filtro:hover {
-            background-color: #7c4dff;
-            color: white;
         }
 
         /* --- TARJETAS DE SEMANAS --- */
@@ -150,14 +54,14 @@
             background-color: #ffffff;
             border-radius: 12px;
             padding: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .semana:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
         }
 
         .semana h2 {
@@ -167,7 +71,7 @@
             font-size: 1.3rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .semana h2::before {
@@ -178,7 +82,7 @@
         .semana p {
             color: #555;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 20px;
         }
 
@@ -193,14 +97,15 @@
 
         .nota-pdf {
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #777;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .nota-pdf a {
             color: #5c6bc0;
             text-decoration: underline;
+            font-weight: 600;
         }
 
         /* --- REPRODUCTOR DE VIDEO --- */
@@ -214,9 +119,10 @@
 
         .pie-reproductor {
             text-align: center;
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 10px;
+            font-style: italic;
         }
 
         /* --- FOOTER --- */
@@ -228,7 +134,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 40px;
-            margin-top: 30px;
+            margin-top: auto;
         }
 
         .logo-colegio {
@@ -237,29 +143,17 @@
         }
 
         .logo-colegio:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         /* --- ADAPTABILIDAD MOBILE --- */
-        @media (max-width: 768px) {
-            .panel-estadisticas {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
         @media (max-width: 600px) {
-            .panel-estadisticas {
-                grid-template-columns: repeat(2, 1fr);
+            main {
+                padding: 15px;
             }
 
-            .panel-busqueda {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filtros {
-                flex-wrap: wrap;
-                justify-content: center;
+            .semana {
+                padding: 18px;
             }
 
             footer {
@@ -279,53 +173,16 @@
 
     <!-- ENCABEZADO -->
     <header>
-        Contenido de mi Página Web
+        Bitácora de Trabajo - Arduino & Desarrollo Web
     </header>
 
     <main>
-
-        <!-- RESUMEN / ESTADÍSTICAS -->
-        <section class="panel-estadisticas">
-            <div class="item-estadistica">
-                <div class="numero">7</div>
-                <div class="etiqueta">Semanas</div>
-            </div>
-            <div class="item-estadistica">
-                <div class="numero">2</div>
-                <div class="etiqueta">Sensores</div>
-            </div>
-            <div class="item-estadistica">
-                <div class="numero">5</div>
-                <div class="etiqueta">Circ. Físicos</div>
-            </div>
-            <div class="item-estadistica">
-                <div class="numero">4</div>
-                <div class="etiqueta">Circ. Simulador</div>
-            </div>
-            <div class="item-estadistica">
-                <div class="numero">⚙️</div>
-                <div class="etiqueta">Arduino UNO</div>
-            </div>
-        </section>
-
-        <!-- BARRA DE BÚSQUEDA Y FILTROS -->
-        <section class="panel-busqueda">
-            <div class="caja-busqueda">
-                <input type="text" placeholder="Buscar semana o tema (ej. Sensores, RGB)...">
-            </div>
-            <div class="filtros">
-                <button class="btn-filtro activo">Todos</button>
-                <button class="btn-filtro">Sensores</button>
-                <button class="btn-filtro">Simulación</button>
-                <button class="btn-filtro">Físico</button>
-            </div>
-        </section>
 
         <!-- SEMANA 1 (PDF) -->
         <article class="semana">
             <h2>Semana 1: Introducción a Arduino</h2>
             <p>
-                En esta sección aprendimos sobre los componentes de Arduino y cómo interactuar con elementos electrónicos básicos a través de material conceptual.
+                En esta semana aprendimos los conceptos fundamentales de Arduino UNO, identificando sus componentes electrónicos principales y la estructura básica de conexiones en protoboard.
             </p>
 
             <embed src="pdf.pdf" class="contenedor-pdf">
@@ -337,9 +194,9 @@
 
         <!-- SEMANA 2 (VIDEO) -->
         <article class="semana">
-            <h2>Semana 2: Primer circuito y programación</h2>
+            <h2>Semana 2: Primer Circuito y Programación</h2>
             <p>
-                En esta clase exploramos cómo dar vida a nuestro primer circuito con Arduino UNO usando estructuras avanzadas en Tinkercad (Diseño de semáforo básico en simulador).
+                Exploramos nuestro primer circuito simulado en Tinkercad, aprendiendo la estructura básica del código y la lógica de control de componentes electrónicos.
             </p>
 
             <video class="reproductor-video" controls preload="metadata">
@@ -347,14 +204,14 @@
                 Tu navegador no soporta videos HTML5.
             </video>
 
-            <div class="pie-reproductor">Video explicativo del circuito simulado.</div>
+            <div class="pie-reproductor">Video explicativo del primer circuito simulado.</div>
         </article>
 
         <!-- SEMANA 3 (VIDEO) -->
         <article class="semana">
-            <h2>Semana 3: Primer circuito y programación LED RGB</h2>
+            <h2>Semana 3: Programación de LED RGB</h2>
             <p>
-                En esta clase exploramos cómo dar vida a nuestro primer circuito con un módulo RGB en Arduino UNO mediante estructuras avanzadas en Tinkercad.
+                Diseño y simulación de un circuito con módulo LED RGB en Tinkercad, combinando salidas digitales para generar distintos tonos de color mediante código.
             </p>
 
             <video class="reproductor-video" controls preload="metadata">
@@ -362,14 +219,14 @@
                 Tu navegador no soporta videos HTML5.
             </video>
 
-            <div class="pie-reproductor">Video explicativo del circuito simulado.</div>
+            <div class="pie-reproductor">Video demostrativo del funcionamiento del LED RGB.</div>
         </article>
 
         <!-- SEMANA 4 (VIDEO) -->
         <article class="semana">
-            <h2>Semana 4: Leds</h2>
+            <h2>Semana 4: Secuencia de LEDs</h2>
             <p>
-                Implementación de sensores ultrasónicos HC-SR04 para la medición de distancias y activación de alertas sonoras/visuales.
+                Configuración y programación de múltiples LEDs individuales, aplicando tiempos de retardo (delays) y secuencias lógicas de encendido y apagado.
             </p>
 
             <video class="reproductor-video" controls preload="metadata">
@@ -377,14 +234,14 @@
                 Tu navegador no soporta videos HTML5.
             </video>
 
-            <div class="pie-reproductor">Video explicativo del montaje y prueba.</div>
+            <div class="pie-reproductor">Video explicativo del montaje y secuencia de LEDs.</div>
         </article>
 
         <!-- SEMANA 5 (VIDEO) -->
         <article class="semana">
-            <h2>Semana 5: Semaforo</h2>
+            <h2>Semana 5: Sistema de Semáforo</h2>
             <p>
-                Control de posición y movimiento preciso empleando servomotores con lecturas analógicas desde un potenciómetro.
+                Implementación del circuito de un semáforo interactivo, sincronizando los tiempos de luz verde, amarilla y roja a través de la programación en Arduino.
             </p>
 
             <video class="reproductor-video" controls preload="metadata">
@@ -392,14 +249,14 @@
                 Tu navegador no soporta videos HTML5.
             </video>
 
-            <div class="pie-reproductor">Video explicativo del montaje y prueba.</div>
+            <div class="pie-reproductor">Video explicativo del ciclo del semáforo.</div>
         </article>
 
         <!-- SEMANA 6 (VIDEO) -->
         <article class="semana">
-            <h2>Semana 6: Ultrasonico</h2>
+            <h2>Semana 6: Sensor Ultrasónico</h2>
             <p>
-                Traspaso de la simulación virtual a la placa física de Arduino UNO, manejo de conexiones en protoboard y alimentación de componentes.
+                Uso del sensor ultrasónico HC-SR04 para medir distancias en tiempo real y activar respuestas programadas según la cercanía de un objeto.
             </p>
 
             <video class="reproductor-video" controls preload="metadata">
@@ -407,14 +264,14 @@
                 Tu navegador no soporta videos HTML5.
             </video>
 
-            <div class="pie-reproductor">Video del circuito físico en funcionamiento.</div>
+            <div class="pie-reproductor">Video del circuito con sensor ultrasónico en funcionamiento.</div>
         </article>
 
         <!-- SEMANA 7 (VIDEO) -->
         <article class="semana">
             <h2>Semana 7: Proyecto Final e Integración de Sistemas</h2>
             <p>
-                Consolidación de sensores, salidas visuales y lógica de control integradas en el proyecto completo de la bitácora.
+                Consolidación de los sensores, salidas de luz y lógica de control integrados en el montaje físico y funcional del proyecto de cierre.
             </p>
 
             <video class="reproductor-video" controls preload="metadata">
@@ -422,7 +279,7 @@
                 Tu navegador no soporta videos HTML5.
             </video>
 
-            <div class="pie-reproductor">Video demostrativo del proyecto final.</div>
+            <div class="pie-reproductor">Video demostrativo de la integración final.</div>
         </article>
 
     </main>
