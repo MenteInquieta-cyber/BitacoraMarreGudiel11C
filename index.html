@@ -108,13 +108,16 @@
             font-weight: 600;
         }
 
-        /* --- REPRODUCTOR DE VIDEO --- */
-        .reproductor-video {
+        /* --- REPRODUCTOR DE VIDEO E IMÁGENES --- */
+        .reproductor-video, .imagen-semana {
             width: 100%;
             max-height: 450px;
+            object-fit: contain;
             border-radius: 8px;
             background-color: #000;
             outline: none;
+            display: block;
+            margin: 0 auto;
         }
 
         .pie-reproductor {
@@ -222,19 +225,16 @@
             <div class="pie-reproductor">Video demostrativo del funcionamiento del LED RGB.</div>
         </article>
 
-        <!-- SEMANA 4 (VIDEO) -->
+        <!-- SEMANA 4 (IMAGEN) -->
         <article class="semana">
             <h2>Semana 4: Secuencia de LEDs</h2>
             <p>
                 Configuración y programación de múltiples LEDs individuales, aplicando tiempos de retardo (delays) y secuencias lógicas de encendido y apagado.
             </p>
 
-            <video class="reproductor-video" controls preload="metadata">
-                <source src="rgb fisico.jpeg" type="video/mp4">
-                Tu navegador no soporta videos HTML5.
-            </video>
+            <img src="rgb fisico.jpeg" alt="Montaje de LED RGB Físico" class="imagen-semana">
 
-            <div class="pie-reproductor">Video explicativo del montaje y secuencia de LEDs.</div>
+            <div class="pie-reproductor">Fotografía del montaje del circuito físico.</div>
         </article>
 
         <!-- SEMANA 5 (VIDEO) -->
@@ -266,7 +266,6 @@
 
             <div class="pie-reproductor">Video del circuito con sensor ultrasónico en funcionamiento.</div>
         </article>
-
 
     </main>
 
